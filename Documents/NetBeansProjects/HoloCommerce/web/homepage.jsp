@@ -1,9 +1,3 @@
-<%-- 
-    Document   : homepage
-    Created on : Jun 6, 2024, 10:15:21 PM
-    Author     : VICTUS
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
