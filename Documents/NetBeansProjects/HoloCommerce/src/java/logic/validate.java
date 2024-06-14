@@ -20,9 +20,10 @@ public class validate extends HttpServlet {
             Connection conn = null;
             PreparedStatement pstmt = null;
             ResultSet rs = null;
-
+            
+            /* Koneksi ke database dan melakukan if else kondisi untuk membuat 
+               logika ketika user sedang mencoba untuk melakukan login */            
             try {
-                // Connect to the database
                 dbcon konek = new dbcon();
                 conn = konek.bukaKoneksi();
                 String sql = "SELECT * FROM users WHERE nama = ? AND pass = ?";
@@ -32,14 +33,12 @@ public class validate extends HttpServlet {
                 rs = pstmt.executeQuery();
 
                 if (rs.next()) {
-                    // User found, set session and redirect to homepage
                     HttpSession session = request.getSession();
                     session.setAttribute("user", name);
 
                     RequestDispatcher rd = request.getRequestDispatcher("homepage.jsp");
                     rd.forward(request, response);
                 } else {
-                    // User not found, send error message
                     request.setAttribute("errorMessage", "<font color='red'><b>Invalid username or password.</b></font><br><br>");
                     RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                     rd.include(request, response);

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="jdbc.dbcon"%>
+<%@ page import="logic.registerLogic"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -9,46 +10,15 @@
         <title>Register Page</title>
     </head>
     <body>
-        <!-- Register Logic -->
-        <%
-        String nama = request.getParameter("nama");
-        String pass = request.getParameter("pass");  
-        String dapat = request.getParameter("btnsimpan");
-        String message = null;
-
-        if (dapat != null && dapat.equals("simpan")) {
-            Connection conn = null;
-            PreparedStatement pstmt = null;
-            try {
-                dbcon konek = new dbcon();
-                conn = konek.bukaKoneksi();
-                String sql = "INSERT INTO users (nama, pass) VALUES (?, ?)";
-                pstmt = conn.prepareStatement(sql);
-                pstmt.setString(1, nama);
-                pstmt.setString(2, pass);
-                pstmt.executeUpdate();
-                message = "berhasil disimpan";
-            } catch (Exception e) {
-                message = "Error: " + e.getMessage();
-            } finally {
-                try {
-                    if (pstmt != null) pstmt.close();
-                    if (conn != null) conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        request.setAttribute("message", message);
-        %>
         <div class="container">
             <div class="rightimg">
                 <img src="RSC/suisei.jpg" alt="imgsuisei">
             </div>  
             <div class="login">
-                <form method="post" action="register.jsp">
+                <form method="post" action="registerLogic">
                     <h1>Register</h1>
                     <hr>
+                    <% String message = (String) request.getAttribute("message"); %>
                     <% if (message != null) { %>
                         <p><%= message %></p>
                     <% } %>
