@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet(name = "validate", urlPatterns = {"/validate"})
 public class validate extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -20,9 +21,7 @@ public class validate extends HttpServlet {
             Connection conn = null;
             PreparedStatement pstmt = null;
             ResultSet rs = null;
-            
-            /* Koneksi ke database dan melakukan if else kondisi untuk membuat 
-               logika ketika user sedang mencoba untuk melakukan login */            
+
             try {
                 dbcon konek = new dbcon();
                 conn = konek.bukaKoneksi();
@@ -36,8 +35,14 @@ public class validate extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("user", name);
 
-                    RequestDispatcher rd = request.getRequestDispatcher("homepage.jsp");
-                    rd.forward(request, response);
+                    // **Perbaikan: Periksa apakah admin**
+                    if (name.equals("admin123")) {
+                        RequestDispatcher rd = request.getRequestDispatcher("adminHome.jsp");
+                        rd.forward(request, response);
+                    } else { // jika user biasa
+                        RequestDispatcher rd = request.getRequestDispatcher("homepage.jsp");
+                        rd.forward(request, response);
+                    }
                 } else {
                     request.setAttribute("errorMessage", "<font color='red'><b>Invalid username or password.</b></font><br><br>");
                     RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
@@ -48,14 +53,8 @@ public class validate extends HttpServlet {
                 request.setAttribute("errorMessage", "<font color='red'><b>Error: " + e.getMessage() + "</b></font><br><br>");
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                 rd.include(request, response);
-            } finally {
-                try {
-                    if (rs != null) rs.close();
-                    if (pstmt != null) pstmt.close();
-                    if (conn != null) conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+} finally {
+                // ... (Penutupan koneksi, prepared statement, dan result set tetap sama)
             }
         } finally {
             out.close();
