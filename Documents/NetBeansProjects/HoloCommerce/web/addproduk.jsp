@@ -1,6 +1,6 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="jdbc.dbcon"%>
-<%@ page import="produk.produkCRUD"%>
+<%@ page import="produk.produkCreate"%>
 <%@ page import="java.sql.*"%>
 <html>
 <head>
@@ -17,7 +17,7 @@
 
     <h2>Tambah Produk Baru</h2>
 
-    <<form action="produkCRUD" method="post" enctype="multipart/form-data">>
+    <<form action="produkCreate" method="post" enctype="multipart/form-data">>
         <label for="nmproduk">Nama Produk:</label>
         <input type="text" id="nmproduk" name="nmproduk" required><br><br>
 

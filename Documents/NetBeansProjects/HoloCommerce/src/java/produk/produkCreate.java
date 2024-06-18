@@ -8,9 +8,9 @@ import java.io.*;
 import java.nio.file.*;
 import java.sql.*;
 
-@WebServlet("/produkCRUD")
+@WebServlet("/produkCreate")
 @MultipartConfig
-public class produkCRUD extends HttpServlet {
+public class produkCreate extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
@@ -45,8 +45,13 @@ public class produkCRUD extends HttpServlet {
             // Parameter Setting (null-safe image handling)
             pstmt.setString(1, nmproduk);
             if (gambarProdukStream != null) { // Only save image path if it exists
-                String uploadPath = getServletContext().getRealPath("/") + "uploads/" + gambarProdukNama;
-                Files.copy(gambarProdukStream, Paths.get(uploadPath), StandardCopyOption.REPLACE_EXISTING);
+                String uploadPath = getServletContext().getRealPath("/") + "uploads/";
+                File uploadDir = new File(uploadPath);
+                if (!uploadDir.exists()) {
+                    uploadDir.mkdirs(); // Create uploads directory if it doesn't exist
+                }
+                String filePath = uploadPath + gambarProdukNama;
+                Files.copy(gambarProdukStream, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
                 pstmt.setString(2, "uploads/" + gambarProdukNama); 
             } else {
                 pstmt.setNull(2, Types.VARCHAR); // Explicitly set NULL for no image
