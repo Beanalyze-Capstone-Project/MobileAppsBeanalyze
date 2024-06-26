@@ -1,0 +1,220 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes swipeUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.navbar {
+  position: sticky;
+  background-color: #000;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Distribute items to start and end */
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar .ic{
+    color:#fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Group items at the end */
+.navbar .end-items {
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    display: flex; /* Ensure items stay in a row */
+}
+
+.navbar li {
+  padding: 14px 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar a:hover {
+  color: lightblue; /* or any color you prefer for hover */
+}
+.container {
+    width: 100%;
+    margin: 0 auto; 
+}
+
+.fcontent {
+    width: 100%;
+}
+
+.fcontent img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content{
+    margin: 2% 5%;
+}
+
+.product-container {
+    align-items: center;
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: start;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+}
+
+.action-buttons {
+    display: flex;
+}
+
+.action-buttons .add-button {
+    
+    cursor: pointer;
+    border: 2px solid transparent; 
+    border-radius: 5px;
+    background-color: #3399ff;
+    font-size: large;
+    font-weight: bold;
+    color:#fff;
+    margin: 10px;
+    padding: 10px 200px;
+}
+
+.action-buttons .add-button:hover {
+    background-color: #fff;
+    border: 2px solid #3399ff;
+    color:#3399ff;
+}
+
+.action-buttons .remove-button {
+    background-color: #fff;
+    border: 2px solid #3399ff;
+    color:#3399ff;
+}
+
+.action-buttons .remove-button:hover {
+    background-color: #cc0000;
+}
+
+.cart-count {
+    margin-top: 20px;
+    text-align: start;
+    font-size: 18px;
+    color: #333;
+}
+
+tbody {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px;      
+}
+
+tr {
+    flex: 0 0 calc(33% - 20px); /* Each product takes 1/3 width (adjust as needed) */
+    background-color: #fff;   
+    padding: 2px;            
+    border-radius: 8px;       
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    display: flex;             
+    flex-direction: column;    
+    align-items: start;       
+    text-align: center;        
+    font-weight: bold;
+    font-size: large;
+}
+
+th, td {
+    text-align: start; 
+}
+
+.about{
+    margin: 5% 5%;
+}
+
+h1{
+    color: #3399ff;
+}
+
+.contentabout{
+    background-color: #3399ff;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.contentabout h1, p{
+    color: #fff;
+    margin: 2% 5% 2% 5%;
+}
+
+.contentcontact{
+    background-color: #fff;
+    color: #000;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.contentcontact h1, p{
+    color: #000;
+    margin: 2% 5% 2% 5%;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 50px;
+}

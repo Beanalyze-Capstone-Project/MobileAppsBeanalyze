@@ -14,14 +14,12 @@ public class validate extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
         try {
             String name = request.getParameter("user");
             String password = request.getParameter("pass");
             Connection conn = null;
             PreparedStatement pstmt = null;
             ResultSet rs = null;
-
             try {
                 dbcon konek = new dbcon();
                 conn = konek.bukaKoneksi();
@@ -30,16 +28,13 @@ public class validate extends HttpServlet {
                 pstmt.setString(1, name);
                 pstmt.setString(2, password);
                 rs = pstmt.executeQuery();
-
                 if (rs.next()) {
                     HttpSession session = request.getSession();
                     session.setAttribute("user", name);
-
-                    // **Perbaikan: Periksa apakah admin**
-                    if (name.equals("admin123")) {
-                        RequestDispatcher rd = request.getRequestDispatcher("adminHome.jsp");
+                    if (name.equals("kenny")) {
+                        RequestDispatcher rd = request.getRequestDispatcher("homepage.jsp");
                         rd.forward(request, response);
-                    } else { // jika user biasa
+                    } else {
                         RequestDispatcher rd = request.getRequestDispatcher("homepage.jsp");
                         rd.forward(request, response);
                     }
@@ -54,7 +49,6 @@ public class validate extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
                 rd.include(request, response);
 } finally {
-                // ... (Penutupan koneksi, prepared statement, dan result set tetap sama)
             }
         } finally {
             out.close();
