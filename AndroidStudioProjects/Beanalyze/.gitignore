@@ -1,0 +1,75 @@
+# Built application files
+*.apk
+*.ap_
+
+# Files for the IntelliJ IDEA-based Android Studio
+*.iml
+.gradle/
+.idea/
+build/
+captures/
+.externalNativeBuild/
+
+# Local configuration file (sdk path, etc.)
+local.properties
+
+# Log files
+*.log
+
+# Android Studio Patch files
+*.rej
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.lock
+*.tmp
+*.temp
+*.bak
+*.orig
+*.idea/misc.xml
+*.orig.*
+
+# Gradle files
+.gradle/
+build/
+**/build/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Proguard mapping files
+mapping.txt
+output.json
+
+# Google Services (e.g. Firebase)
+google-services.json
+
+# Android Studio specific
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Android Studio 3.1+ generated files
+.idea/codeStyles/Project.xml
+.idea/codeStyles/codeStyleConfig.xml
+
+# Ignore linting results
+lint/intermediates/
+lint/generated/
+lint/tmp/
+
+# Unit test result files
+**/build/test-results/
+**/build/test-results/**/*.xml
+**/build/test-results/**/*.html
+**/build/outputs/reports/
+
+# .env files (environment configurations)
+*.env
+/app/build.gradle.kts
