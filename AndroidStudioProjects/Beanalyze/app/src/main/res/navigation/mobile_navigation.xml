@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_homepage">
+
+    <fragment
+        android:id="@+id/navigation_homepage"
+        android:name="com.capstone.beanalyze.ui.home.HomepageFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_homepage" />
+
+    <fragment
+        android:id="@+id/navigation_diseaselist"
+        android:name="com.capstone.beanalyze.ui.disease.DiseaseListFragment"
+        android:label="@string/disease_list"
+        tools:layout="@layout/fragment_disease_list" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.capstone.beanalyze.ui.history.HistoryFragment"
+        android:label="@string/analysis_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.capstone.beanalyze.ui.setting.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>
