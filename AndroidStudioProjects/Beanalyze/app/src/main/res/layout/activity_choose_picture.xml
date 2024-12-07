@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.galery.ChoosePictureActivity">
+    tools:context=".ui.galery.ChoosePictureActivity"
+    android:background="@color/background">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,15 +20,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/homepagetop"
+                android:elevation="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/tvBack"
-                style="@style/poppinsBoldWhite20"
+                style="@style/poppinsBold20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:text="Back to homepage"
+                android:translationZ="11dp"
                 app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
                 app:layout_constraintEnd_toEndOf="@+id/bannerTop"
                 app:layout_constraintStart_toStartOf="@+id/bannerTop"
@@ -54,7 +58,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvChoosePicture"
-                app:srcCompat="@drawable/imagetest" />
+                app:srcCompat="@drawable/choosepicture" />
 
             <Button
                 android:id="@+id/btnChoosePicture"
@@ -72,12 +76,12 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAnalysis"
-                style="@style/poppinsBoldWhite20"
+                style="@style/poppinsBoldMain20"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/btncustom"
+                android:background="@drawable/btnsetting"
                 android:text="Analysis picture"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"

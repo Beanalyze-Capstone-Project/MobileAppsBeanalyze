@@ -19,13 +19,13 @@ class SessionManager(context: Context) {
         return sharedPreferences.getBoolean("IS_LOGGED_IN", false)
     }
 
-    fun logout() {
+    fun getToken(): String? {
+        return sharedPreferences.getString("TOKEN", null)
+    }
+
+    fun clearLoginSession() {
         val editor = sharedPreferences.edit()
         editor.clear()
         editor.apply()
-    }
-
-    fun getToken(): String? {
-        return sharedPreferences.getString("TOKEN", null)
     }
 }

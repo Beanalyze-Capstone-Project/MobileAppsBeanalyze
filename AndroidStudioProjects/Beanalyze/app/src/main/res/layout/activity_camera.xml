@@ -10,8 +10,7 @@
         android:id="@+id/camView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTakePhoto"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,17 +23,18 @@
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cancel"/>
+        app:srcCompat="@drawable/cancel"
+        android:contentDescription="@string/cancel" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTakePhoto"
         style="@style/poppinsBoldWhite20"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginHorizontal="16dp"
-        android:background="@drawable/btncustom"
+        android:background="@drawable/btnrounded"
+        android:contentDescription="@string/photoTxt"
         android:layout_marginVertical="32dp"
-        android:text="Take Picture"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -27,12 +27,6 @@ class LoginActivity : AppCompatActivity() {
 
         sessionManager = SessionManager(this)
 
-
-        if (sessionManager.isLoggedIn()) {
-            navigateToMain()
-            return
-        }
-
         binding.tvRegister.setOnClickListener {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
@@ -45,8 +39,16 @@ class LoginActivity : AppCompatActivity() {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 loginUser(email, password)
             } else {
-                Toast.makeText(this, "Username dan password tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Username and password cannot be empty", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (sessionManager.isLoggedIn()) {
+            navigateToMain()
         }
     }
 
@@ -60,13 +62,13 @@ class LoginActivity : AppCompatActivity() {
                     val token = response.body()?.token
                     if (token != null) {
                         sessionManager.saveLoginSession(token)
-                        Toast.makeText(this@LoginActivity, "Login berhasil!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Login successful !", Toast.LENGTH_SHORT).show()
                         navigateToMain()
                     } else {
-                        Toast.makeText(this@LoginActivity, "Token tidak ditemukan!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Token invalid!", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(this@LoginActivity, "Login gagal: ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Login failure : ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -82,4 +84,3 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 }
-

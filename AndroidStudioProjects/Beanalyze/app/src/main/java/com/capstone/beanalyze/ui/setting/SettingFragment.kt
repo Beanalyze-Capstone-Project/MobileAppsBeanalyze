@@ -28,10 +28,13 @@ class SettingFragment : Fragment() {
     ): View {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(requireContext())
+
         fetchProfile()
+
         binding.btnBack.setOnClickListener {
             logoutUser()
         }
+
         return binding.root
     }
 
@@ -50,7 +53,6 @@ class SettingFragment : Fragment() {
                     Toast.makeText(requireContext(), "Failed to fetch profile: ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
                 Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
@@ -69,7 +71,7 @@ class SettingFragment : Fragment() {
         _binding = null
     }
 
-    private fun showProfile(profile: ProfileResponse){
+    private fun showProfile(profile: ProfileResponse) {
         binding.settingUsername.text = profile.username
         binding.settingEmail.text = profile.email
     }

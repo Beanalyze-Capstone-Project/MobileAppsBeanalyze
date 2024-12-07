@@ -36,6 +36,12 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="poppinsBoldMain20" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/mainColor</item>
+    </style>
+
     <style name="poppinsBoldWhite20" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">20sp</item>
@@ -44,6 +50,22 @@
 
     <style name="poppinsBoldWhite25" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="poppinsBold25" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="imageRounded" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="poppinsSemiBoldWhite20" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -71,6 +93,12 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
+    <style name="poppinsWhite12" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="poppinsbold12white" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">14sp</item>

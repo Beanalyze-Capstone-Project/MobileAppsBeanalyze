@@ -4,21 +4,16 @@
     <item
         android:id="@+id/navigation_homepage"
         android:icon="@drawable/home"
-        android:title="" />
+        android:title="Homepage" />
 
     <item
         android:id="@+id/navigation_diseaselist"
         android:icon="@drawable/menu"
-        android:title="" />
-
-    <item
-        android:id="@+id/navigation_history"
-        android:icon="@drawable/history"
-        android:title="" />
+        android:title="Disease List" />
 
     <item
         android:id="@+id/navigation_setting"
         android:icon="@drawable/settingicon"
-        android:title="" />
+        android:title="Setting" />
 
 </menu>

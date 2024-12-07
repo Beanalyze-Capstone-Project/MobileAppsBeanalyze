@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.disease.DiseaseListFragment">
+    tools:context=".ui.disease.DiseaseListFragment"
+    android:background="@color/background">
 
     <View
         android:id="@+id/bannerTop"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@drawable/homepagetop"
+        android:elevation="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDiseaseList"
-        style="@style/poppinsBoldWhite25"
+        style="@style/poppinsBold25"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:text="Disease"
+        android:translationZ="11dp"
         app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:text="Berikut adalah daftar penyakit dari daun kacang "
+        android:text="Here is a list of diseases on bean leaves"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDiseasetxt" />

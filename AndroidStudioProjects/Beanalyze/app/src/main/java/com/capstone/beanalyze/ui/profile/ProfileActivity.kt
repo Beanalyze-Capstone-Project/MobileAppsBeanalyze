@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.capstone.beanalyze.MainActivity
-import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ActivityProfileBinding
 import com.capstone.beanalyze.model.ProfileResponse
 import com.capstone.beanalyze.network.ApiClient

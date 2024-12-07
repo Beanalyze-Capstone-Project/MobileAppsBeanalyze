@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileActivity">
+    tools:context=".ui.profile.ProfileActivity"
+    android:background="@color/background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
 
             <TextView
                 android:id="@+id/tvProfile"
-                style="@style/poppinsBold30"
+                style="@style/poppinsBold25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -29,16 +30,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/profilerounded"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/imageRounded"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvProfile"
-                app:srcCompat="@drawable/fptemplate" />
+                app:srcCompat="@drawable/fprofile" />
 
             <TextView
                 android:id="@+id/tvUsername"

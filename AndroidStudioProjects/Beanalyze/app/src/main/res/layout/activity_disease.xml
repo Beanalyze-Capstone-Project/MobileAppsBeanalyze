@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.disease.DiseaseActivity">
+    tools:context=".ui.disease.DiseaseActivity"
+    android:background="@color/background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
 
             <TextView
                 android:id="@+id/tvDiseaseList"
-                style="@style/poppinsBoldWhite30"
+                style="@style/poppinsBold25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -43,7 +44,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bannerTop"
-                app:srcCompat="@drawable/imagetest"
+                app:srcCompat="@drawable/choosepicture"
                 android:contentDescription="ImageDisease" />
 
             <TextView

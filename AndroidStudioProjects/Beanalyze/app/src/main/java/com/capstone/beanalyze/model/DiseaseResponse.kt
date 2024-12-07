@@ -8,7 +8,7 @@ data class Disease(
     val id: Int,
     val name: String,
     val slugs: String,
-    val image_url: String, // Tambahan untuk URL gambar
+    val image_url: String,
     val impact: String,
     val cause: String,
     val identification: String,

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.result.ResultAnalysis">
+    tools:context=".ui.result.ResultAnalysis"
+    android:background="@color/background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,49 +15,52 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scrollbars="none">
-
             <View
                 android:id="@+id/bannerTop"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/homepagetop"
+                android:elevation="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvProfile"
-                style="@style/poppinsBoldWhite25"
-                android:layout_width="0dp"
+                android:id="@+id/tvBeanalyze"
+                style="@style/poppinsBold25"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:text="Result"
                 app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
-                app:layout_constraintEnd_toEndOf="@+id/bannerTop"
-                app:layout_constraintStart_toStartOf="@+id/bannerTop"
-                app:layout_constraintTop_toTopOf="@+id/bannerTop" />
-
-            <ImageView
-                android:id="@+id/result_image"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bannerTop"
+                android:translationZ="11dp"/>
+
+
+            <ImageView
+                android:id="@+id/ivResult"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="ImageDisease"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bannerTop"
-                app:srcCompat="@drawable/imagetest" />
+                app:srcCompat="@drawable/choosepicture" />
 
             <TextView
-                android:id="@+id/tvDisease"
+                android:id="@+id/tvDiseaseTxt"
                 style="@style/poppinsBold20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="8dp"
-                android:text="Disease :"
+                android:text="Disease name :"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/result_image" />
+                app:layout_constraintTop_toBottomOf="@+id/ivResult" />
 
             <TextView
                 android:id="@+id/tvDiseaseName"
@@ -67,10 +71,10 @@
                 android:text="Disease type a"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDisease" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDiseaseTxt" />
 
             <TextView
-                android:id="@+id/tvConfidence"
+                android:id="@+id/tvConfidenceTxt"
                 style="@style/poppinsBold20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -82,18 +86,87 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDiseaseName" />
 
             <TextView
-                android:id="@+id/tvScoreConfidence"
+                android:id="@+id/tvConfidence"
                 style="@style/poppins15"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:text="90%"
+                android:text="Disease type a"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvConfidenceTxt" />
+
+            <TextView
+                android:id="@+id/tvImpactTxt"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:text="Impact :"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvConfidence" />
 
             <TextView
-                android:id="@+id/tvDescDisease"
+                android:id="@+id/tvImpact"
+                style="@style/poppins15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvImpactTxt" />
+
+            <TextView
+                android:id="@+id/tvCauseTxt"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:text="Cause :"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvImpact" />
+
+            <TextView
+                android:id="@+id/tvCause"
+                style="@style/poppins15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCauseTxt" />
+
+            <TextView
+                android:id="@+id/tvIdentificationTxt"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:text="Identification :"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCause" />
+
+            <TextView
+                android:id="@+id/tvIdentification"
+                style="@style/poppins15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIdentificationTxt" />
+
+            <TextView
+                android:id="@+id/tvSolutionTxt"
                 style="@style/poppinsBold20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -102,10 +175,11 @@
                 android:text="How to treat the disease :"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvScoreConfidence" />
+                app:layout_constraintTop_toBottomOf="@+id/tvIdentification" />
+
 
             <TextView
-                android:id="@+id/tvDesc"
+                android:id="@+id/tvSolution"
                 style="@style/poppins15"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -115,7 +189,7 @@
                 android:text="Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nunc a convallis nibh.Sed commodo augue orci, ut faucibus dui elementum sit amet. "
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDescDisease" />
+                app:layout_constraintTop_toBottomOf="@+id/tvSolutionTxt" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBack"
@@ -123,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btncustom"
                 android:text="Back to Homepage"
@@ -131,7 +205,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+                app:layout_constraintTop_toBottomOf="@+id/tvSolution" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
