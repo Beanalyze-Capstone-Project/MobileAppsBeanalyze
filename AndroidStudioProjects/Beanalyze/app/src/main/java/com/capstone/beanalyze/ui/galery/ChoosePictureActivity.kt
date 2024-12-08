@@ -12,7 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.beanalyze.MainActivity
 import com.capstone.beanalyze.databinding.ActivityChoosePictureBinding
-import com.capstone.beanalyze.model.ClassificationResponse
+import com.capstone.beanalyze.model.response.ClassificationResponse
 import com.capstone.beanalyze.network.ApiClient
 import com.capstone.beanalyze.ui.result.ResultAnalysis
 import com.capstone.beanalyze.utils.SessionManager

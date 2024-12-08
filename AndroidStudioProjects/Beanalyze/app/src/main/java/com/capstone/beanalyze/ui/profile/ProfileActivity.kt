@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.capstone.beanalyze.MainActivity
 import com.capstone.beanalyze.databinding.ActivityProfileBinding
-import com.capstone.beanalyze.model.ProfileResponse
+import com.capstone.beanalyze.model.response.ProfileResponse
 import com.capstone.beanalyze.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback

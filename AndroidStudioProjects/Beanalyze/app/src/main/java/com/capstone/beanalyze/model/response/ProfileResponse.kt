@@ -1,4 +1,4 @@
-package com.capstone.beanalyze.model
+package com.capstone.beanalyze.model.response
 
 data class ProfileResponse (
     val username: String,

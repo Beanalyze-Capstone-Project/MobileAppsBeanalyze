@@ -1,4 +1,4 @@
-package com.capstone.beanalyze.model
+package com.capstone.beanalyze.model.request
 
 data class RegisterRequest (
     val username: String,

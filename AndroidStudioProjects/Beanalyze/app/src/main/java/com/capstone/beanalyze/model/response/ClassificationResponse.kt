@@ -1,4 +1,4 @@
-package com.capstone.beanalyze.model
+package com.capstone.beanalyze.model.response
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

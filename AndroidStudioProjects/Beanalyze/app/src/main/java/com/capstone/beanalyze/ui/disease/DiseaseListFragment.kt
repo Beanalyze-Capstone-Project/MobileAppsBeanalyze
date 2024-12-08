@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.beanalyze.databinding.FragmentDiseaseListBinding
-import com.capstone.beanalyze.model.Disease
-import com.capstone.beanalyze.model.DiseaseResponse
+import com.capstone.beanalyze.model.response.Disease
+import com.capstone.beanalyze.model.response.DiseaseResponse
 import com.capstone.beanalyze.network.ApiClient
 import com.capstone.beanalyze.ui.adapter.AdapterInfo
 import retrofit2.Call

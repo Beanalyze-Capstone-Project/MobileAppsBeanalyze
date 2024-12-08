@@ -7,14 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.capstone.beanalyze.MainActivity
 import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ActivityLoginBinding
-import com.capstone.beanalyze.model.LoginRequest
-import com.capstone.beanalyze.model.Response
+import com.capstone.beanalyze.model.request.LoginRequest
+import com.capstone.beanalyze.model.response.Response
 import com.capstone.beanalyze.network.ApiClient
 import com.capstone.beanalyze.ui.register.RegisterActivity
 import com.capstone.beanalyze.utils.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
-import retrofit2.Response as RetrofitResponse
 
 class LoginActivity : AppCompatActivity() {
 

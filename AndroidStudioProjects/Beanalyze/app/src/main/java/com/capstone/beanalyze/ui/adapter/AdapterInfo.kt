@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.capstone.beanalyze.ui.disease.DiseaseActivity
 import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ListDiseaseBinding
-import com.capstone.beanalyze.model.Disease
+import com.capstone.beanalyze.model.response.Disease
 
 class AdapterInfo(private val diseaseList: List<Disease>) :
     RecyclerView.Adapter<AdapterInfo.DiseaseViewHolder>() {

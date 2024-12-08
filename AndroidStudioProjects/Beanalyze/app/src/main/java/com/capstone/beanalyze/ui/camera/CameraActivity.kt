@@ -17,7 +17,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ActivityCameraBinding
-import com.capstone.beanalyze.model.ClassificationResponse
+import com.capstone.beanalyze.model.response.ClassificationResponse
 import com.capstone.beanalyze.network.ApiClient
 import com.capstone.beanalyze.ui.result.ResultAnalysis
 import okhttp3.MediaType.Companion.toMediaTypeOrNull

@@ -1,11 +1,11 @@
 package com.capstone.beanalyze.network
 
-import com.capstone.beanalyze.model.ClassificationResponse
-import com.capstone.beanalyze.model.DiseaseResponse
-import com.capstone.beanalyze.model.LoginRequest
-import com.capstone.beanalyze.model.ProfileResponse
-import com.capstone.beanalyze.model.RegisterRequest
-import com.capstone.beanalyze.model.Response
+import com.capstone.beanalyze.model.response.ClassificationResponse
+import com.capstone.beanalyze.model.response.DiseaseResponse
+import com.capstone.beanalyze.model.request.LoginRequest
+import com.capstone.beanalyze.model.response.ProfileResponse
+import com.capstone.beanalyze.model.request.RegisterRequest
+import com.capstone.beanalyze.model.response.Response
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Body

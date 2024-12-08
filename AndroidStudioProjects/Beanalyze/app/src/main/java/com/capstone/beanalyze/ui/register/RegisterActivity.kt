@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ActivityRegisterBinding
-import com.capstone.beanalyze.model.RegisterRequest
+import com.capstone.beanalyze.model.request.RegisterRequest
 import com.capstone.beanalyze.network.ApiClient
 import com.capstone.beanalyze.ui.login.LoginActivity
 import retrofit2.Call
@@ -106,8 +106,8 @@ class RegisterActivity : AppCompatActivity() {
         val request = RegisterRequest(username, password, name, city, email)
         val apiService = ApiClient.create(this)
 
-        apiService.userRegister(request).enqueue(object : Callback<com.capstone.beanalyze.model.Response> {
-            override fun onResponse(call: Call<com.capstone.beanalyze.model.Response>, response: Response<com.capstone.beanalyze.model.Response>) {
+        apiService.userRegister(request).enqueue(object : Callback<com.capstone.beanalyze.model.response.Response> {
+            override fun onResponse(call: Call<com.capstone.beanalyze.model.response.Response>, response: Response<com.capstone.beanalyze.model.response.Response>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@RegisterActivity, "Registration successful !", Toast.LENGTH_SHORT).show()
                     navigateToLogin()
@@ -116,7 +116,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<com.capstone.beanalyze.model.Response>, t: Throwable) {
+            override fun onFailure(call: Call<com.capstone.beanalyze.model.response.Response>, t: Throwable) {
                 Toast.makeText(this@RegisterActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })

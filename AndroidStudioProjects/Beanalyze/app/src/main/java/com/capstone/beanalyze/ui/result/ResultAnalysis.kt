@@ -10,7 +10,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.capstone.beanalyze.MainActivity
 import com.capstone.beanalyze.databinding.ActivityResultAnalysisBinding
-import com.capstone.beanalyze.model.ClassificationResponse
+import com.capstone.beanalyze.model.response.ClassificationResponse
 import java.io.FileNotFoundException
 
 class ResultAnalysis : AppCompatActivity() {
