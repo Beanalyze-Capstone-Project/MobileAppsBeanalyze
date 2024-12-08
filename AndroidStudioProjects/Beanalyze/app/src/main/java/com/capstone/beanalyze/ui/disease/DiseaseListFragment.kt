@@ -19,43 +19,52 @@ import retrofit2.Response
 class DiseaseListFragment : Fragment() {
 
     private var _binding: FragmentDiseaseListBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentDiseaseListBinding
+        get() = _binding ?: throw IllegalStateException("Binding is accessed after being destroyed")
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentDiseaseListBinding.inflate(inflater, container, false)
         fetchDiseases()
-        return binding.root
+        return _binding?.root
     }
+
     private fun fetchDiseases() {
-        binding.rvDisease.visibility = View.GONE
-        binding.loadingAnimate.visibility = View.VISIBLE
-        val apiService = ApiClient.create(requireContext())
-        apiService.getDiseases().enqueue(object : Callback<DiseaseResponse> {
-            override fun onResponse(call: Call<DiseaseResponse>, response: Response<DiseaseResponse>) {
-                binding.loadingAnimate.visibility = View.GONE
-                if (response.isSuccessful) {
-                    val diseaseList = response.body()?.diseases ?: emptyList()
-                    setupRecyclerView(diseaseList)
-                    binding.rvDisease.visibility = View.VISIBLE
-                } else {
-                    Toast.makeText(requireContext(), "Failed to fetch data", Toast.LENGTH_SHORT).show()
+        _binding?.let { binding ->
+            binding.rvDisease.visibility = View.GONE
+            binding.loadingAnimate.visibility = View.VISIBLE
+
+            val apiService = ApiClient.create(requireContext())
+            apiService.getDiseases().enqueue(object : Callback<DiseaseResponse> {
+                override fun onResponse(call: Call<DiseaseResponse>, response: Response<DiseaseResponse>) {
+                    binding.loadingAnimate.visibility = View.GONE
+                    if (response.isSuccessful) {
+                        val diseaseList = response.body()?.diseases.orEmpty()
+                        setupRecyclerView(diseaseList)
+                        binding.rvDisease.visibility = View.VISIBLE
+                    } else {
+                        Toast.makeText(requireContext(), "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
-            override fun onFailure(call: Call<DiseaseResponse>, t: Throwable) {
-                binding.loadingAnimate.visibility = View.GONE
-                Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+
+                override fun onFailure(call: Call<DiseaseResponse>, t: Throwable) {
+                    binding.loadingAnimate.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
     }
+
     private fun setupRecyclerView(diseaseList: List<Disease>) {
-        binding.rvDisease.apply {
+        _binding?.rvDisease?.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = AdapterInfo(diseaseList)
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

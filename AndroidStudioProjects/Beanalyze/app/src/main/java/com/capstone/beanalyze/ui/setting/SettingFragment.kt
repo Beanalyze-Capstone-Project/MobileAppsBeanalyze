@@ -19,13 +19,14 @@ import retrofit2.Response
 class SettingFragment : Fragment() {
 
     private var _binding: FragmentSettingBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var sessionManager: SessionManager
+    private val binding: FragmentSettingBinding
+        get() = _binding ?: throw IllegalStateException("Binding is accessed after being destroyed")
+    private var sessionManager: SessionManager? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(requireContext())
 
@@ -35,7 +36,7 @@ class SettingFragment : Fragment() {
             logoutUser()
         }
 
-        return binding.root
+        return _binding?.root
     }
 
     private fun fetchProfile() {
@@ -43,16 +44,16 @@ class SettingFragment : Fragment() {
         apiService.getProfileUser().enqueue(object : Callback<ProfileResponse> {
             override fun onResponse(call: Call<ProfileResponse>, response: Response<ProfileResponse>) {
                 if (response.isSuccessful) {
-                    val profile = response.body()
-                    if (profile != null) {
+                    response.body()?.let { profile ->
                         showProfile(profile)
-                    } else {
+                    } ?: run {
                         Toast.makeText(requireContext(), "Profile not found", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     Toast.makeText(requireContext(), "Failed to fetch profile: ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
+
             override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
                 Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
@@ -60,7 +61,7 @@ class SettingFragment : Fragment() {
     }
 
     private fun logoutUser() {
-        sessionManager.logout()
+        sessionManager?.logout()
         val intent = Intent(requireContext(), LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
@@ -69,10 +70,13 @@ class SettingFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        sessionManager = null
     }
 
     private fun showProfile(profile: ProfileResponse) {
-        binding.settingUsername.text = profile.username
-        binding.settingEmail.text = profile.email
+        _binding?.let { binding ->
+            binding.settingUsername.text = profile.username
+            binding.settingEmail.text = profile.email
+        }
     }
 }

@@ -11,37 +11,38 @@ import com.capstone.beanalyze.ui.camera.CameraActivity
 import com.capstone.beanalyze.ui.galery.ChoosePictureActivity
 import com.capstone.beanalyze.ui.profile.ProfileActivity
 
-
 class HomepageFragment : Fragment() {
 
     private var _binding: FragmentHomepageBinding? = null
-    private val binding get() = _binding!!
+    private val binding: FragmentHomepageBinding
+        get() = _binding ?: throw IllegalStateException("Binding is accessed after being destroyed")
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentHomepageBinding.inflate(inflater, container, false)
         setupCardClickListeners()
-        return binding.root
+        return _binding?.root
     }
 
     private fun setupCardClickListeners() {
+        _binding?.let { binding ->
+            binding.cardTakePhoto.setOnClickListener {
+                val intent = Intent(requireContext(), CameraActivity::class.java)
+                startActivity(intent)
+            }
 
-        binding.cardTakePhoto.setOnClickListener {
-            val intent = Intent(requireContext(), CameraActivity::class.java)
-            startActivity(intent)
-        }
+            binding.cardGalery.setOnClickListener {
+                val intent = Intent(requireContext(), ChoosePictureActivity::class.java)
+                startActivity(intent)
+            }
 
-        binding.cardGalery.setOnClickListener {
-            val intent = Intent(requireContext(), ChoosePictureActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.cardProfile.setOnClickListener {
-            val intent = Intent(requireContext(), ProfileActivity::class.java)
-            startActivity(intent)
+            binding.cardProfile.setOnClickListener {
+                val intent = Intent(requireContext(), ProfileActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
