@@ -3,6 +3,7 @@ package com.capstone.beanalyze.ui.profile
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.capstone.beanalyze.MainActivity
 import com.capstone.beanalyze.databinding.ActivityProfileBinding
@@ -28,9 +29,11 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun fetchProfile() {
+        binding.loadingAnimate.visibility = View.VISIBLE
         val apiService = ApiClient.create(this)
         apiService.getProfileUser().enqueue(object : Callback<ProfileResponse> {
             override fun onResponse(call: Call<ProfileResponse>, response: Response<ProfileResponse>) {
+                binding.loadingAnimate.visibility = View.GONE
                 if (response.isSuccessful) {
                     val profile = response.body()
                     if (profile != null) {
@@ -42,8 +45,8 @@ class ProfileActivity : AppCompatActivity() {
                     Toast.makeText(this@ProfileActivity, "Failed to fetch profile: ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                binding.loadingAnimate.visibility = View.GONE
                 Toast.makeText(this@ProfileActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })

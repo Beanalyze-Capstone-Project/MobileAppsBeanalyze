@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ActivityRegisterBinding
 import com.capstone.beanalyze.model.RegisterRequest
 import com.capstone.beanalyze.network.ApiClient
@@ -35,6 +36,17 @@ class RegisterActivity : AppCompatActivity() {
                 userRegister(username, password, name, city, email)
             }
         }
+        binding.btnTogglePassword.setOnClickListener {
+            val isPasswordVisible = binding.etPassword.inputType != android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            if (isPasswordVisible) {
+                binding.etPassword.inputType = android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.btnTogglePassword.setImageResource(R.drawable.baseline_visibility)
+            } else {
+                binding.etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.btnTogglePassword.setImageResource(R.drawable.baseline_visibility_off)
+            }
+            binding.etPassword.setSelection(binding.etPassword.text.length)
+        }
     }
 
     private fun validateInput(
@@ -44,29 +56,46 @@ class RegisterActivity : AppCompatActivity() {
         city: String,
         email: String
     ): Boolean {
-        return when {
+        var  isUserValid = true
+        when {
             username.isEmpty() -> {
-                showToast("Username cannot be empty")
-                false
+                binding.etUsername.error = "Username cannot be empty"
+                isUserValid = false
             }
-            password.isEmpty() -> {
-                showToast("Password cannot be empty")
-                false
+            username.contains(" ") -> {
+                binding.etUsername.error = "Username cannot contain spaces!"
+                isUserValid = false
             }
-            name.isEmpty() -> {
-                showToast("Name cannot be empty")
-                false
-            }
-            city.isEmpty() -> {
-                showToast("Country cannot be empty")
-                false
-            }
-            email.isEmpty() -> {
-                showToast("Email cannot be empty")
-                false
-            }
-            else -> true
         }
+        when {
+            password.isEmpty() -> {
+                binding.etPassword.error = "Password cannot be empty"
+                isUserValid = false
+            }
+            password.length < 6 -> { // Perbaikan di sini
+                binding.etPassword.error = "Password must be at least 6 characters!"
+                isUserValid = false
+            }
+        }
+        when {
+            email.isEmpty() -> {
+                binding.etEmail.error = "Email cannot be empty"
+                isUserValid = false
+            }
+            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                binding.etEmail.error = "Invalid email format"
+                isUserValid = false
+            }
+        }
+        if (name.isEmpty()) {
+            binding.etName.error = "Name cannot be empty"
+            isUserValid = false
+        }
+        if (city.isEmpty()) {
+            binding.etCity.error = "City cannot be empty"
+            isUserValid = false
+        }
+        return isUserValid
     }
 
     private fun showToast(message: String) {
@@ -75,15 +104,15 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun userRegister(username: String, password: String, name: String, city: String, email: String) {
         val request = RegisterRequest(username, password, name, city, email)
-        val apiService = ApiClient.create(this)  // Memanggil create() dari ApiClient untuk mendapatkan ApiService
+        val apiService = ApiClient.create(this)
 
         apiService.userRegister(request).enqueue(object : Callback<com.capstone.beanalyze.model.Response> {
             override fun onResponse(call: Call<com.capstone.beanalyze.model.Response>, response: Response<com.capstone.beanalyze.model.Response>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(this@RegisterActivity, "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Registration successful !", Toast.LENGTH_SHORT).show()
                     navigateToLogin()
                 } else {
-                    Toast.makeText(this@RegisterActivity, "Gagal registrasi: ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Registration failed", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -92,6 +121,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         })
     }
+
 
     private fun navigateToLogin() {
         val intent = Intent(this@RegisterActivity, LoginActivity::class.java)

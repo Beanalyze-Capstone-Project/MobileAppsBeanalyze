@@ -106,11 +106,23 @@
                 android:ems="30"
                 android:hint="password123"
                 android:inputType="textPassword"
-                android:paddingHorizontal="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+            <ImageButton
+                android:id="@+id/btnTogglePassword"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Toggle Password Visibility"
+                android:src="@drawable/baseline_visibility_off"
+                app:layout_constraintBottom_toBottomOf="@+id/etPassword"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintTop_toTopOf="@+id/etPassword" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnlogin"

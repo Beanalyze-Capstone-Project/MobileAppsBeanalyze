@@ -40,9 +40,11 @@ class SettingFragment : Fragment() {
     }
 
     private fun fetchProfile() {
+        binding.loadingAnimate.visibility = View.VISIBLE
         val apiService = ApiClient.create(requireContext())
         apiService.getProfileUser().enqueue(object : Callback<ProfileResponse> {
             override fun onResponse(call: Call<ProfileResponse>, response: Response<ProfileResponse>) {
+                binding.loadingAnimate.visibility = View.GONE
                 if (response.isSuccessful) {
                     response.body()?.let { profile ->
                         showProfile(profile)
@@ -53,8 +55,8 @@ class SettingFragment : Fragment() {
                     Toast.makeText(requireContext(), "Failed to fetch profile: ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                binding.loadingAnimate.visibility = View.GONE
                 Toast.makeText(requireContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.beanalyze.MainActivity
+import com.capstone.beanalyze.R
 import com.capstone.beanalyze.databinding.ActivityLoginBinding
 import com.capstone.beanalyze.model.LoginRequest
 import com.capstone.beanalyze.model.Response
@@ -42,6 +43,17 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Username and password cannot be empty", Toast.LENGTH_SHORT).show()
             }
         }
+        binding.btnTogglePassword.setOnClickListener {
+            val isPasswordVisible = binding.etPassword.inputType != android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            if (isPasswordVisible) {
+                binding.etPassword.inputType = android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.btnTogglePassword.setImageResource(R.drawable.baseline_visibility)
+            } else {
+                binding.etPassword.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.btnTogglePassword.setImageResource(R.drawable.baseline_visibility_off)
+            }
+            binding.etPassword.setSelection(binding.etPassword.text.length)
+        }
     }
 
     override fun onResume() {
@@ -68,12 +80,12 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "Token invalid!", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(this@LoginActivity, "Login failure : ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Login failure", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<Response>, t: Throwable) {
-                Toast.makeText(this@LoginActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "", Toast.LENGTH_SHORT).show()
             }
         })
     }

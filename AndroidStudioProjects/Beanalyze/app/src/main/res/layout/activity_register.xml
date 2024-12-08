@@ -14,220 +14,233 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scrollbars="none">
-        <View
-            android:id="@+id/bannerTop"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/homepagetop"
-            android:elevation="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:id="@+id/bannerTop"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/homepagetop"
+                android:elevation="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvLogin"
-            style="@style/poppinsBold30"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="32dp"
-            android:text="REGISTER"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBackToLogin" />
-
-        <TextView
-            android:id="@+id/tvLoginTxt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Please register first to create your account"
-            style="@style/poppinsMedium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
-
-        <TextView
-            android:id="@+id/tvEmail"
-            style="@style/poppinsBold20"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:text="Email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLoginTxt" />
-
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            style="@style/poppinsMedium"
-            android:paddingHorizontal="20dp"
-            android:background="@drawable/editxtcustom"
-            android:hint="Input your email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
-
-        <TextView
-            android:id="@+id/tvUsername"
-            style="@style/poppinsBold20"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Username"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
-
-        <EditText
-            android:id="@+id/etUsername"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:inputType="text"
-            style="@style/poppinsMedium"
-            android:paddingHorizontal="20dp"
-            android:background="@drawable/editxtcustom"
-            android:hint="Input your username"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
-
-        <TextView
-            android:id="@+id/tvName"
-            style="@style/poppinsBold20"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etUsername" />
-
-        <EditText
-            android:id="@+id/etName"
-            style="@style/poppinsMedium"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/editxtcustom"
-            android:ems="10"
-            android:hint="Input your name"
-            android:inputType="text"
-            android:paddingHorizontal="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
-        <TextView
-            android:id="@+id/tvPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            style="@style/poppinsBold20"
-            android:text="Password"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etName" />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            style="@style/poppinsMedium"
-            android:paddingHorizontal="20dp"
-            android:background="@drawable/editxtcustom"
-            android:hint="input your password"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
-
-        <TextView
-            android:id="@+id/tvCity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            style="@style/poppinsBold20"
-            android:text="Country"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
-        <EditText
-            android:id="@+id/etCity"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            style="@style/poppinsMedium"
-            android:paddingHorizontal="20dp"
-            android:background="@drawable/editxtcustom"
-            android:hint="Input your country"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCity" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnregister"
-                style="@style/poppinsBoldWhite20"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tvLogin"
+                style="@style/poppinsBold30"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/btncustom"
-                android:paddingHorizontal="40dp"
-                android:text="Register"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etCity" />
+                android:text="REGISTER"
 
-        <TextView
-            android:id="@+id/tvBackToLogin"
-            style="@style/poppinsBold20"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="Back to login"
-            android:translationZ="11dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/bannerTop" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBackToLogin" />
+
+            <TextView
+                android:id="@+id/tvLoginTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Please register first to create your account"
+                style="@style/poppinsMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:text="Email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLoginTxt" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                style="@style/poppinsMedium"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/editxtcustom"
+                android:hint="Input your email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:inputType="text"
+                style="@style/poppinsMedium"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/editxtcustom"
+                android:hint="Input your username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+            <EditText
+                android:id="@+id/etName"
+                style="@style/poppinsMedium"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/editxtcustom"
+                android:ems="10"
+                android:hint="Input your name"
+                android:inputType="text"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <TextView
+                android:id="@+id/tvPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                style="@style/poppinsBold20"
+                android:text="Password"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                style="@style/poppinsMedium"
+                android:paddingStart="20dp"
+                android:paddingEnd="60dp"
+                android:background="@drawable/editxtcustom"
+                android:hint="input your password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+            <ImageButton
+                android:id="@+id/btnTogglePassword"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Toggle Password Visibility"
+                android:src="@drawable/baseline_visibility_off"
+                app:layout_constraintBottom_toBottomOf="@+id/etPassword"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintTop_toTopOf="@+id/etPassword" />
+
+            <TextView
+                android:id="@+id/tvCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                style="@style/poppinsBold20"
+                android:text="Country"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                style="@style/poppinsMedium"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/editxtcustom"
+                android:hint="Input your country"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCity" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnregister"
+                    style="@style/poppinsBoldWhite20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btncustom"
+                    android:paddingHorizontal="40dp"
+                    android:text="Register"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etCity" />
+
+            <TextView
+                android:id="@+id/tvBackToLogin"
+                style="@style/poppinsBold20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Back to login"
+                android:translationZ="11dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bannerTop" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

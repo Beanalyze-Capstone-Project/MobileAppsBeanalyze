@@ -11,24 +11,25 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@drawable/imgrounded">
+        android:background="@drawable/listres"
+        android:elevation="5dp">
 
         <TextView
-            android:id="@+id/nameDisease"
+            android:id="@+id/historyDiseaseName"
             style="@style/poppinsBold20"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:text="@string/lsPenyakit"
             android:textAlignment="textStart"
-            app:layout_constraintBottom_toBottomOf="@+id/ivDisease"
+            app:layout_constraintBottom_toBottomOf="@+id/ivHistory"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivDisease"
-            app:layout_constraintTop_toTopOf="@+id/ivDisease" />
+            app:layout_constraintStart_toEndOf="@+id/ivHistory"
+            app:layout_constraintTop_toTopOf="@+id/ivHistory" />
 
         <ImageView
             android:background="@drawable/imgrounded"
-            android:id="@+id/ivDisease"
+            android:id="@+id/ivHistory"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginVertical="8dp"
@@ -37,6 +38,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/bean" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
