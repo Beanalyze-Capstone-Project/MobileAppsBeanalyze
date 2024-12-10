@@ -37,7 +37,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/bean" />
+            app:srcCompat="@drawable/bean"
+            android:contentDescription="@string/disease_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

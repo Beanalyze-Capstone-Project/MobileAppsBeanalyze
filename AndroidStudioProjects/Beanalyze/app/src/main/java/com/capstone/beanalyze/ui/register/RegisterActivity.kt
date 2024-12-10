@@ -72,7 +72,7 @@ class RegisterActivity : AppCompatActivity() {
                 binding.etPassword.error = "Password cannot be empty"
                 isUserValid = false
             }
-            password.length < 6 -> { // Perbaikan di sini
+            password.length < 6 -> {
                 binding.etPassword.error = "Password must be at least 6 characters!"
                 isUserValid = false
             }

@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:text="Homepage"
+                android:text="@string/homepage"
                 app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:text="Main Feature"
+                android:text="@string/main_feature"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bannerTop" />
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:text="Here are the main features of this application"
+                android:text="@string/mainfeature_txt"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvHello" />
@@ -95,14 +95,15 @@
                             android:layout_height="120dp"
                             android:layout_gravity="center"
                             android:layout_marginHorizontal="8dp"
-                            android:src="@drawable/takepicture" />
+                            android:src="@drawable/takepicture"
+                            android:contentDescription="@string/take_picture" />
 
                         <TextView
                             style="@style/poppinsBold15"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="5dp"
-                            android:text="Take picture" />
+                            android:text="@string/take_picture_txt" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -130,7 +131,8 @@
                             android:layout_height="120dp"
                             android:layout_marginHorizontal="8dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/choosepicture" />
+                            android:src="@drawable/choosepicture"
+                            android:contentDescription="@string/choose_picutre" />
 
                         <TextView
                             style="@style/poppinsBold15"
@@ -138,7 +140,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="5dp"
                             android:textAlignment="center"
-                            android:text="Choose Picture" />
+                            android:text="@string/choose_picture_txt" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </GridLayout>
@@ -178,14 +180,15 @@
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_marginHorizontal="16dp"
-                            android:src="@drawable/profile" />
+                            android:src="@drawable/profile"
+                            android:contentDescription="@string/profile" />
 
                         <TextView
                             style="@style/poppinsBoldWhite20"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="10dp"
-                            android:text="My Profile" />
+                            android:text="@string/my_profile" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </GridLayout>

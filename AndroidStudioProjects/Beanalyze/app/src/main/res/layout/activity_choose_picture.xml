@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:text="Back to homepage"
+                android:text="@string/back_to_homepage"
                 android:translationZ="11dp"
                 app:layout_constraintBottom_toBottomOf="@+id/bannerTop"
                 app:layout_constraintEnd_toEndOf="@+id/bannerTop"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Choose Picture"
+                android:text="@string/choose_picture_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bannerTop" />
 
@@ -58,9 +58,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvChoosePicture"
-                app:srcCompat="@drawable/choosepicture" />
+                app:srcCompat="@drawable/choosepicture"
+                android:contentDescription="@string/image_galery" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnChoosePicture"
                 style="@style/poppinsBoldWhite20"
                 android:layout_width="match_parent"
@@ -68,7 +69,7 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/btncustom"
-                android:text="Choose picture"
+                android:text="@string/choose_picture"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +83,7 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/btnsetting"
-                android:text="Analysis picture"
+                android:text="@string/analysis_picture"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
